@@ -12,5 +12,7 @@ func AdminRoutes(ctx *gin.Engine) {
 		admin.POST("product/create/", controllers.CreateProductAdmin)
 		admin.GET("product/:id/", controllers.GetProduct)
 		admin.GET("products/", controllers.GetProducts)
+		admin.PATCH("product/:id", controllers.UpdateProduct)
+		admin.DELETE("product/:id", controllers.DeleteProduct)
 	}
 }

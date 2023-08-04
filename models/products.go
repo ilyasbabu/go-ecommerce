@@ -16,7 +16,7 @@ type Products struct {
 	Slug        string `gorm:"size:200;unique"`
 }
 
-func (p *Products) BeforeCreate(tx *gorm.DB) (err error) {
+func (p *Products) BeforeSave(tx *gorm.DB) (err error) {
 	p.Slug = slug.Make(p.Name)
 	return nil
 }
