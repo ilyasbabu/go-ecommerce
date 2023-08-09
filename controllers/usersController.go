@@ -43,6 +43,9 @@ func Signup(c *gin.Context) {
 		c.JSON(http.StatusNotAcceptable, r)
 		return
 	}
+
+	go SendMail(email, "Welcome to our store", "We are happy to have you onboard!")
+
 	r.Status = "SUCCESS"
 	r.Message = "Signed Up Successfully"
 	c.JSON(http.StatusOK, r)

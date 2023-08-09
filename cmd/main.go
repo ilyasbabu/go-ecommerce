@@ -6,9 +6,9 @@ import (
 )
 
 func init() {
+	i.LoadEnv()
 	i.ConnectDatabase()
 	i.SyncDatabase()
-	i.LoadEnv()
 }
 
 func main() {
