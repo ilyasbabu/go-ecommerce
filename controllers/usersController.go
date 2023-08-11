@@ -9,6 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/ilyasbabu/go-ecommerce/models"
+	"github.com/ilyasbabu/go-ecommerce/services"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
@@ -44,7 +45,7 @@ func Signup(c *gin.Context) {
 		return
 	}
 
-	go SendMail(email, "Welcome to our store", "We are happy to have you onboard!")
+	go services.SendMail(email, "Welcome to our store", "We are happy to have you onboard!")
 
 	r.Status = "SUCCESS"
 	r.Message = "Signed Up Successfully"

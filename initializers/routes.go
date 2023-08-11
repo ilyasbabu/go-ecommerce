@@ -8,4 +8,5 @@ import (
 func SetupRoutes(ctx *gin.Engine) {
 	routes.AdminRoutes(ctx)
 	routes.UserRoutes(ctx)
+	ctx.Static("/media", "./public")
 }

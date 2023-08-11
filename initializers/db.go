@@ -25,10 +25,12 @@ func SyncDatabase() {
 	err := Db.AutoMigrate(
 		&models.Products{},
 		&models.User{},
+		&models.ProductImages{},
 	)
 	if err != nil {
 		log.Print(err.Error())
 		log.Fatal("failed to auto-migrate schema")
 	}
 	controllers.SetDB(Db)
+	services.SetDB(Db)
 }
